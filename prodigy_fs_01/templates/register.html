@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" class="form-box">
+        <h2>Register</h2>
+
+        <!-- Username -->
+        <input type="text" name="username" placeholder="Username" required>
+
+        <!-- Email -->
+        <input type="email" name="email" placeholder="Email" required>
+
+        <!-- Password Field with Toggle -->
+        <div class="password-box">
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <span onclick="togglePassword()">👁</span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="password-box">
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+            <span onclick="toggleConfirmPassword()">👁</span>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </form>
+</div>
+ {% endblock %}
